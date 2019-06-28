@@ -1,0 +1,21 @@
+{
+    "name": "nizerin/rongcloud-im",
+    "description": " 融云 IM SDK fro PHP , IM ,聊天室，直播间",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "nizerin",
+            "email": "nizerin98@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "RongCloud\\": "src"
+        }
+    }
+}
