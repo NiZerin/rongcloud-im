@@ -1,8 +1,7 @@
-server-sdk-php
+# Rong Cloud Server SDK in PHP
 =================
 ![https://www.rongcloud.cn/docs/assets/img/index/logo.png](https://www.rongcloud.cn/docs/assets/img/index/logo.png)
 
-Rong Cloud Server SDK in PHP.
 
 # Composer 安装
 ```
