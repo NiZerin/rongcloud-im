@@ -1,7 +1,13 @@
 server-sdk-php
 =================
+![https://www.rongcloud.cn/docs/assets/img/index/logo.png](https://www.rongcloud.cn/docs/assets/img/index/logo.png)
 
 Rong Cloud Server SDK in PHP.
+
+# Composer 安装
+```
+composer require nizerin/rongcloud-im
+```
 
 # 版本说明
 为方便开发者的接入使用，更好的对融云 Server SDK 进行维护管理，融云 Server SDK 3.0 统一规范了命名及调用方式，结构更加清晰。老版本的 Server SDK 仍然可以使用，但不会再做新的功能更新。
