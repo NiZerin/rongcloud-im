@@ -2,7 +2,8 @@
 /**
  * 用户模块测试用例
  */
-require "./../RongCloud.php";
+
+require "./src/RongCloud.php";
 define("APPKEY", '');
 define('APPSECRET','');
 
@@ -13,7 +14,7 @@ $RongSDK = new RongCloud(APPKEY,APPSECRET);
 
 function testUser($RongSDK){
     $portrait = "http://7xogjk.com1.z0.glb.clouddn.com/IuDkFprSQ1493563384017406982";
-    $User = $RongSDK->getUser();
+    $User = $RongSDK->User();
 
     $params = [
         'id'=> 'ujadk90had',//用户id
@@ -79,7 +80,7 @@ function testUser($RongSDK){
 testUser($RongSDK);
 
 function testUserBlock($RongSDK){
-    $User = $RongSDK->getUser()->Block();
+    $User = $RongSDK->User()->Block();
 
     $params = [
         'id'=> 'ujadk90had',//封禁用户id 唯一标识，最大长度 30 个字符
@@ -115,7 +116,7 @@ function testUserBlock($RongSDK){
 testUserBlock($RongSDK);
 
 function testUserBlacklist($RongSDK){
-    $User = $RongSDK->getUser()->Blacklist();
+    $User = $RongSDK->User()->Blacklist();
 
     $params = [
         'id'=> 'ujadk90ha1d',//用户 id
@@ -156,7 +157,7 @@ function testUserBlacklist($RongSDK){
 testUserBlacklist($RongSDK);
 
 function testUserOnlinestatus($RongSDK){
-    $User = $RongSDK->getUser()->Onlinestatus();
+    $User = $RongSDK->User()->Onlinestatus();
 
     $params = [
         'id'=> 'ujadk90ha1d',//用户 id
@@ -171,7 +172,7 @@ testUserOnlinestatus($RongSDK);
 
 
 function testUserMuteGroups($RongSDK){
-    $Group = $RongSDK->getUser()->MuteGroups();
+    $Group = $RongSDK->User()->MuteGroups();
     $params = [
         'members'=>[ //禁言人员列表
             ['id'=> 'group9994']
@@ -213,7 +214,7 @@ function testUserMuteGroups($RongSDK){
 testUserMuteGroups($RongSDK);
 
 function testUserMuteChatrooms($RongSDK){
-    $Chatroom = $RongSDK->getUser()->MuteChatrooms();
+    $Chatroom = $RongSDK->User()->MuteChatrooms();
     $params = [
         'members'=> [
             ['id'=>'seal9901']//人员 id

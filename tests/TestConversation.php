@@ -2,7 +2,7 @@
 /**
  * 会话模块测试用例
  */
-require "./../RongCloud.php";
+require "./src/RongCloud.php";
 define("APPKEY", '');
 define('APPSECRET','');
 
@@ -12,7 +12,7 @@ use RongCloud\Lib\Utils;
 $RongSDK = new RongCloud(APPKEY,APPSECRET);
 
 function testConversation($RongSDK){
-    $Conversation = $RongSDK->getConversation();
+    $Conversation = $RongSDK->Conversation();
     $params = [
         'type'=> 'PRIVATE',//会话类型 PRIVATE、GROUP、DISCUSSION、SYSTEM
         'userId'=>'mka091amn',//会话所有者

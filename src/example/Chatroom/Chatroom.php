@@ -21,7 +21,7 @@ function create()
         ['id'=> 'php chatroom1',//聊天室 id
         'name'=> 'php chatroom1']//聊天室 name
     ];
-    $result = $RongSDK->getChatroom()->create($chatroom);
+    $result = $RongSDK->ChatRoom()->create($chatroom);
     Utils::dump("创建聊天室",$result);
 }
 create();
@@ -34,7 +34,7 @@ function destory()
 
     $RongSDK = new RongCloud(APPKEY,APPSECRET);
     $chatroom = ['id'=> 'php chatroom'];//聊天室 id
-    $result = $RongSDK->getChatroom()->destory($chatroom);
+    $result = $RongSDK->ChatRoom()->destory($chatroom);
     Utils::dump("销毁聊天室",$result);
 }
 destory();
@@ -50,7 +50,7 @@ function get()
                 'count'=>10,
                 'order'=>1
                 ];
-    $result = $RongSDK->getChatroom()->get($chatroom);
+    $result = $RongSDK->ChatRoom()->get($chatroom);
     Utils::dump("获取聊天室信息",$result);
 }
 get();
@@ -69,7 +69,7 @@ function isExist()
             ['id'=>"sea9902"]//人员id
         ]
     ];
-    $result = $RongSDK->getChatroom()->isExist($chatroom);
+    $result = $RongSDK->ChatRoom()->isExist($chatroom);
     Utils::dump("检查用户是否在聊天室",$result);
 }
 isExist();

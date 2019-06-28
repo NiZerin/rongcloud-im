@@ -22,7 +22,7 @@ function send()
         "objectName"=>'RC:TxtMsg',//消息类型 文本
         'content'=>json_encode(['content'=>'php 群消息 你好，小明'])//消息体
     ];
-    $Result = $RongSDK->getMessage()->Group()->send($message);
+    $Result = $RongSDK->Message()->Group()->send($message);
     Utils::dump("群组消息发送",$Result);
 }
 send();
@@ -46,7 +46,7 @@ function sendMention()
             ]
         ])
     ];
-    $Result = $RongSDK->getMessage()->Group()->sendMention($message);
+    $Result = $RongSDK->Message()->Group()->sendMention($message);
     Utils::dump("发送 @ 消息",$Result);
 }
 sendMention();
@@ -63,7 +63,7 @@ function recall()
         "uId"=>'5GSB-RPM1-KP8H-9JHF',//消息的唯一标识
         'sentTime'=>'1519444243981'//消息的发送时间
     ];
-    $Result = $RongSDK->getMessage()->Group()->recall($message);
+    $Result = $RongSDK->Message()->Group()->recall($message);
     Utils::dump("撤回已发送的群聊消息",$Result);
 }
 recall();

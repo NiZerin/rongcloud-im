@@ -19,7 +19,7 @@ function check()
     $user = [
         'id'=> 'ujadk90hadsdfasdf',
     ];
-    $register = $RongSDK->getUser()->Onlinestatus()->check($user);
+    $register = $RongSDK->User()->Onlinestatus()->check($user);
     Utils::dump("用户注册",$register);
 }
 check();

@@ -22,7 +22,7 @@ function send()
         "objectName"=>'RC:TxtMsg',//消息类型 文本
         'content'=>json_encode(['content'=>'php 聊天室 你好，主播'])//消息内容
     ];
-    $Chartromm = $RongSDK->getMessage()->Chatroom()->send($message);
+    $Chartromm = $RongSDK->Message()->Chatroom()->send($message);
     Utils::dump("聊天室发送消息",$Chartromm);
 }
 send();
@@ -38,7 +38,7 @@ function broadcast()
         "objectName"=>'RC:TxtMsg',//消息类型 文本
         'content'=>json_encode(['content'=>'php 聊天室广播 你好，主播'])//消息内容
     ];
-    $Chartromm = $RongSDK->getMessage()->Chatroom()->broadcast($message);
+    $Chartromm = $RongSDK->Message()->Chatroom()->broadcast($message);
     Utils::dump("聊天室广播消息",$Chartromm);
 }
 broadcast();

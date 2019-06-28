@@ -19,7 +19,7 @@ function add()
     $chatroom = [
         'msgs'=> ['RC:TxtMsg03','RC:TxtMsg02']// 消息类型列表
     ];
-    $Demotion = $RongSDK->getChatroom()->Demotion()->add($chatroom);
+    $Demotion = $RongSDK->ChatRoom()->Demotion()->add($chatroom);
     Utils::dump("添加应用内聊天室降级消息",$Demotion);
 }
 add();
@@ -33,7 +33,7 @@ function remove()
     $chatroom = [
         'msgs'=> ['RC:TxtMsg01','RC:TxtMsg02']// 消息类型列表
     ];
-    $Demotion = $RongSDK->getChatroom()->Demotion()->remove($chatroom);
+    $Demotion = $RongSDK->ChatRoom()->Demotion()->remove($chatroom);
     Utils::dump("移除应用内聊天室降级消息",$Demotion);
 }
 remove();
@@ -47,7 +47,7 @@ function getList()
     $chatroom = [
 
     ];
-    $Demotion = $RongSDK->getChatroom()->Demotion()->getList($chatroom);
+    $Demotion = $RongSDK->ChatRoom()->Demotion()->getList($chatroom);
     Utils::dump("获取应用内聊天室降级消息",$Demotion);
 }
 getList();

@@ -21,7 +21,7 @@ function add()
         'keyword'=>"abc",//敏感词
         'type'=>0// 0: 敏感词替换 1: 敏感词屏蔽
     ];
-    $result = $RongSDK->getSensitive()->add($sensitive);
+    $result = $RongSDK->Sensitive()->add($sensitive);
     Utils::dump("添加敏感词",$result);
 }
 add();
@@ -36,7 +36,7 @@ function remove()
     $sensitive = [
         'keywords'=>["cccccdddd"]//删除敏感词
     ];
-    $result = $RongSDK->getSensitive()->remove($sensitive);
+    $result = $RongSDK->Sensitive()->remove($sensitive);
     Utils::dump("删除敏感词",$result);
 }
 remove();
@@ -51,7 +51,7 @@ function getList()
     $sensitive = [
         'type'=> '',//敏感词类型，0: 敏感词替换， 1: 敏感词屏蔽， 为空获取全部
     ];
-    $result = $RongSDK->getSensitive()->getList($sensitive);
+    $result = $RongSDK->Sensitive()->getList($sensitive);
     Utils::dump("获取敏感词列表",$result);
 }
 getList();

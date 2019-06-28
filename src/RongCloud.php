@@ -116,7 +116,7 @@ class RongCloud
      *
      * @return User
      */
-    public function getUser(){
+    public function User(){
         return $this->_user;
     }
 
@@ -125,7 +125,7 @@ class RongCloud
      *
      * @return Message
      */
-    public function getMessage(){
+    public function Message(){
         return $this->_message;
     }
 
@@ -134,7 +134,7 @@ class RongCloud
      *
      * @return Group
      */
-    public function getGroup(){
+    public function Group(){
         return $this->_group;
     }
 
@@ -143,7 +143,7 @@ class RongCloud
      *
      * @return Chatroom
      */
-    public function getChatroom(){
+    public function ChatRoom(){
         return $this->_chatroom;
     }
 
@@ -152,7 +152,7 @@ class RongCloud
      *
      * @return Conversation
     */
-    public function getConversation(){
+    public function Conversation(){
         return $this->_conversation;
     }
 
@@ -161,7 +161,7 @@ class RongCloud
      *
      * @return Sensitive
      */
-    public function getSensitive(){
+    public function Sensitive(){
         return $this->_sensitive;
     }
 }

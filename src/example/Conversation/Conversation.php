@@ -20,7 +20,7 @@ function mute()
         'userId'=>'Vu-oC0_LQ6kgPqltm_zYtI',//会话所有者
         'targetId'=>'Vu-oC0_LQ6kgPqltm_zYtI'//会话 id
     ];
-    $result = $RongSDK->getConversation()->mute($conversation);
+    $result = $RongSDK->Conversation()->mute($conversation);
     Utils::dump("设置用户某个会话屏蔽 Push",$result);
 }
 mute();
@@ -37,7 +37,7 @@ function unmute()
         'userId'=>'mka091amn',//会话所有者
         'targetId'=>'adm1klnm'//会话 id
     ];
-    $result = $RongSDK->getConversation()->unmute($conversation);
+    $result = $RongSDK->Conversation()->unmute($conversation);
     Utils::dump("设置用户某个会话接收 Push",$result);
 }
 unmute();

@@ -20,7 +20,7 @@ function add()
         'id'=> 'ujadk90ha',//用户 id
         'blacklist'=> ['kkj9o01'] //需要添加黑名单的人员列表
     ];
-    $Blacklist = $RongSDK->getUser()->Blacklist()->add($user);
+    $Blacklist = $RongSDK->User()->Blacklist()->add($user);
     Utils::dump("添加黑名单",$Blacklist);
 }
 add();
@@ -35,7 +35,7 @@ function remove()
         'id'=> 'ujadk90ha',//用户 id
         'blacklist'=> ['kkj9o02'] //需要移除黑名单的人员列表
     ];
-    $Blacklist = $RongSDK->getUser()->Blacklist()->remove($user);
+    $Blacklist = $RongSDK->User()->Blacklist()->remove($user);
     Utils::dump("移除黑名单",$Blacklist);
 }
 remove();
@@ -49,7 +49,7 @@ function getList()
     $user = [
         'id'=> 'ujadk90ha',//用户 id
     ];
-    $Blacklist = $RongSDK->getUser()->Blacklist()->getList($user);
+    $Blacklist = $RongSDK->User()->Blacklist()->getList($user);
     Utils::dump("用户黑名单列表",$Blacklist);
 }
 getList();

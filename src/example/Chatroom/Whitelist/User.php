@@ -23,7 +23,7 @@ function add()
             ["id"=>"user2"]
         ]
     ];
-    $User = $RongSDK->getChatroom()->Whitelist()->User()->add($chatroom);
+    $User = $RongSDK->ChatRoom()->Whitelist()->User()->add($chatroom);
     Utils::dump("添加聊天室用户白名单",$User);
 }
 add();
@@ -41,7 +41,7 @@ function remove()
            ["id"=>"user5"]
         ]
     ];
-    $User = $RongSDK->getChatroom()->Whitelist()->User()->remove($chatroom);
+    $User = $RongSDK->ChatRoom()->Whitelist()->User()->remove($chatroom);
     Utils::dump("移除聊天室用户白名单",$User);
 }
 remove();
@@ -55,7 +55,7 @@ function getList()
     $chatroom = [
         "id"=>"seal9901",//聊天室 id
     ];
-    $User = $RongSDK->getChatroom()->Whitelist()->User()->getList($chatroom);
+    $User = $RongSDK->ChatRoom()->Whitelist()->User()->getList($chatroom);
     Utils::dump("获取聊天室用户白名单",$User);
 }
 getList();

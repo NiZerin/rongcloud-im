@@ -20,7 +20,7 @@ function add()
         'id'=> 'ujadk90ha1',//封禁用户id 唯一标识，最大长度 30 个字符
         'minute'=> 20 //封禁时长 1 - 1 * 30 * 24 * 60 分钟
     ];
-    $Block = $RongSDK->getUser()->Block()->add($user);
+    $Block = $RongSDK->User()->Block()->add($user);
     Utils::dump("封禁用户",$Block);
 }
 add();
@@ -34,7 +34,7 @@ function remove()
     $user = [
         'id'=> 'ujadk90ha1',//解禁用户id 唯一标识，最大长度 30 个字符
     ];
-    $Block =  $RongSDK->getUser()->Block()->remove($user);
+    $Block =  $RongSDK->User()->Block()->remove($user);
     Utils::dump("解除用户封禁",$Block);
 }
 remove();
@@ -48,7 +48,7 @@ function getList()
     $user = [
 
     ];
-    $Block =  $RongSDK->getUser()->Block()->getList($user);
+    $Block =  $RongSDK->User()->Block()->getList($user);
     Utils::dump("封禁用户列表",$Block);
 }
 getList();

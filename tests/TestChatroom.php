@@ -12,7 +12,7 @@ use RongCloud\Lib\Utils;
 $RongSDK = new RongCloud(APPKEY,APPSECRET);
 
 function testChatroom($RongSDK){
-    $Chatroom = $RongSDK->getChatroom();
+    $Chatroom = $RongSDK->ChatRoom();
     $params = [
         ['id'=> 'chatroom9992',
         'name'=> 'RongCloud']
@@ -50,7 +50,7 @@ function testChatroom($RongSDK){
 testChatroom($RongSDK);
 
 function testChatroomBan($RongSDK){
-    $Chatroom = $RongSDK->getChatroom()->Ban();
+    $Chatroom = $RongSDK->ChatRoom()->Ban();
     $params = [
         'members'=> [
             ['id'=>'seal9901']//人员 id
@@ -79,7 +79,7 @@ function testChatroomBan($RongSDK){
 testChatroomBan($RongSDK);
 
 function testChatroomBlock($RongSDK){
-    $Chatroom = $RongSDK->getChatroom()->Block();
+    $Chatroom = $RongSDK->ChatRoom()->Block();
     $params = [
         'id'=> 'watergroup1',//群组 id
         'members'=>[ //禁言人员列表
@@ -125,7 +125,7 @@ function testChatroomBlock($RongSDK){
 testChatroomBlock($RongSDK);
 
 function testChatroomDemotion($RongSDK){
-    $Chatroom = $RongSDK->getChatroom()->Demotion();
+    $Chatroom = $RongSDK->ChatRoom()->Demotion();
     $params = [
         'msgs'=> ['RC:TxtMsg03','RC:TxtMsg02']// 消息类型列表
     ];
@@ -145,7 +145,7 @@ function testChatroomDemotion($RongSDK){
 testChatroomDemotion($RongSDK);
 
 function testChatroomDistribute($RongSDK){
-    $Chatroom = $RongSDK->getChatroom()->Distribute();
+    $Chatroom = $RongSDK->ChatRoom()->Distribute();
     $params = [
         'id'=> "Txtmsg03"//聊天室 id
     ];
@@ -164,7 +164,7 @@ function testChatroomDistribute($RongSDK){
 testChatroomDistribute($RongSDK);
 
 function testChatroomGag($RongSDK){
-    $Chatroom = $RongSDK->getChatroom()->Gag();
+    $Chatroom = $RongSDK->ChatRoom()->Gag();
     $params = [
         'id'=> 'chatroom001',//聊天室 id
         'members'=> [
@@ -198,7 +198,7 @@ function testChatroomGag($RongSDK){
 testChatroomGag($RongSDK);
 
 function testChatroomKeepalive($RongSDK){
-    $Chatroom = $RongSDK->getChatroom()->Keepalive();
+    $Chatroom = $RongSDK->ChatRoom()->Keepalive();
     $params = [
         'id'=> 'chatroom001',//聊天室 id
     ];
@@ -221,7 +221,7 @@ testChatroomKeepalive($RongSDK);
 testChatroomGag($RongSDK);
 
 function testChatroomWhitelistUser($RongSDK){
-    $Chatroom = $RongSDK->getChatroom()->Whitelist()->User();
+    $Chatroom = $RongSDK->ChatRoom()->Whitelist()->User();
     $params = [
         "id"=>"seal9901",//聊天室 id
         "members"=>[
@@ -255,7 +255,7 @@ function testChatroomWhitelistUser($RongSDK){
 testChatroomWhitelistUser($RongSDK);
 
 function testChatroomWhitelistMessage($RongSDK){
-    $Chatroom = $RongSDK->getChatroom()->Whitelist()->Message();
+    $Chatroom = $RongSDK->ChatRoom()->Whitelist()->Message();
     $params = [
         'msgs'=> ["RC:TxtMsg"]//消息类型列表
     ];

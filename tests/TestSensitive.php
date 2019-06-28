@@ -2,7 +2,8 @@
 /**
  * 敏感词模块测试用例
  */
-require "./../RongCloud.php";
+
+require "./src/RongCloud.php";
 define("APPKEY", '');
 define('APPSECRET','');
 
@@ -12,7 +13,7 @@ use RongCloud\Lib\Utils;
 $RongSDK = new RongCloud(APPKEY,APPSECRET);
 
 function testSensitive($RongSDK){
-    $Sensitive = $RongSDK->getSensitive();
+    $Sensitive = $RongSDK->Sensitive();
     $params = [
         'replace'=> '***',//敏感词替换，最长不超过 32 个字符， 敏感词屏蔽可以为空
         'keyword'=>"abc",//敏感词

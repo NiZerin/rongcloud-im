@@ -22,7 +22,7 @@ function add()
         ],
         'minute'=>30//禁言时长
     ];
-    $MuteChatrooms = $RongSDK->getUser()->MuteChatrooms()->add($chatroom);
+    $MuteChatrooms = $RongSDK->User()->MuteChatrooms()->add($chatroom);
     Utils::dump("添加聊天室成员禁言",$MuteChatrooms);
 }
 add();
@@ -38,7 +38,7 @@ function remove()
             ['id'=>'seal9901']//人员 id
         ],
     ];
-    $MuteChatrooms = $RongSDK->getUser()->MuteChatrooms()->remove($chatroom);
+    $MuteChatrooms = $RongSDK->User()->MuteChatrooms()->remove($chatroom);
     Utils::dump("解除聊天室成员禁言",$MuteChatrooms);
 }
 remove();
@@ -52,7 +52,7 @@ function getList()
     $chatroom = [
         
     ];
-    $MuteChatrooms = $RongSDK->getUser()->MuteChatrooms()->getList($chatroom);
+    $MuteChatrooms = $RongSDK->User()->MuteChatrooms()->getList($chatroom);
     Utils::dump("获取聊天室成员禁言列表",$MuteChatrooms);
 }
 getList();

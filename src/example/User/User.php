@@ -21,7 +21,7 @@ function register()
         'name'=> 'Maritn',//用户名称
         'portrait'=> 'http://7xogjk.com1.z0.glb.clouddn.com/IuDkFprSQ1493563384017406982' //用户头像
     ];
-    $register = $RongSDK->getUser()->register($user);
+    $register = $RongSDK->User()->register($user);
     Utils::dump("用户注册",$register);
 }
 register();
@@ -37,7 +37,7 @@ function update()
         'name'=> 'Maritn',//用户名称
         'portrait'=> 'http://7xogjk.com1.z0.glb.clouddn.com/IuDkFprSQ1493563384017406982' //用户头像
     ];
-    $update = $RongSDK->getUser()->update($user);
+    $update = $RongSDK->User()->update($user);
     Utils::dump("用户信息更新",$update);
 }
 update();

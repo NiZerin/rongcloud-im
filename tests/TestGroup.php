@@ -2,7 +2,7 @@
 /**
  * 群组模块测试用例
  */
-require "./../RongCloud.php";
+require "./src/RongCloud.php";
 define("APPKEY", '');
 define('APPSECRET','');
 
@@ -12,7 +12,7 @@ use RongCloud\Lib\Utils;
 $RongSDK = new RongCloud(APPKEY,APPSECRET);
 
 function testGroup($RongSDK){
-    $Group = $RongSDK->getGroup();
+    $Group = $RongSDK->Group();
     $params = [
         'id'=> 'ujadk90ha',//用户id
         'groups'=>[['id'=> 'group9998', 'name'=> 'RongCloud']]//用户群组信息
@@ -85,7 +85,7 @@ function testGroup($RongSDK){
 testGroup($RongSDK);
 
 function testGroupGag($RongSDK){
-    $Group = $RongSDK->getGroup()->Gag();
+    $Group = $RongSDK->Group()->Gag();
     $params = [
         'id'=> 'watergroup1',//群组 id
         'members'=>[ //禁言人员列表

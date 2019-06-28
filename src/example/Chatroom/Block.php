@@ -23,7 +23,7 @@ function add()
         ],
         'minute'=>500//封禁时长
     ];
-    $Block = $RongSDK->getChatroom()->Block()->add($chatroom);
+    $Block = $RongSDK->ChatRoom()->Block()->add($chatroom);
     Utils::dump("添加封禁",$Block);
 }
 add();
@@ -40,7 +40,7 @@ function remove()
             ['id'=>'aP9uvganV']//解除封禁成员 id
         ],
     ];
-    $Block = $RongSDK->getChatroom()->Block()->remove($chatroom);
+    $Block = $RongSDK->ChatRoom()->Block()->remove($chatroom);
     Utils::dump("解除封禁",$Block);
 }
 remove();
@@ -54,7 +54,7 @@ function getList()
     $chatroom = [
         'id'=>'OIBbeKlkx'//聊天室 id
     ];
-    $Block = $RongSDK->getChatroom()->Block()->getList($chatroom);
+    $Block = $RongSDK->ChatRoom()->Block()->getList($chatroom);
     Utils::dump("查询被封禁成员列表",$Block);
 }
 getList();

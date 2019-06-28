@@ -19,7 +19,7 @@ function get()
     $message = [
         'date'=> '2019011711',//日期
     ];
-    $Chartromm = $RongSDK->getMessage()->History()->get($message);
+    $Chartromm = $RongSDK->Message()->History()->get($message);
     Utils::dump("历史消息获取",$Chartromm);
 }
 get();
@@ -33,7 +33,7 @@ function remove()
     $message = [
         'date'=> '2018011116',//日期
     ];
-    $Chartromm = $RongSDK->getMessage()->History()->remove($message);
+    $Chartromm = $RongSDK->Message()->History()->remove($message);
     Utils::dump("历史消息文件删除",$Chartromm);
 }
 remove();

@@ -18,7 +18,7 @@ function add()
     $chatroom = [
         'msgs'=> ["RC:TxtMsg"]//消息类型列表
     ];
-    $Message = $RongSDK->getChatroom()->Whitelist()->Message()->add($chatroom);
+    $Message = $RongSDK->ChatRoom()->Whitelist()->Message()->add($chatroom);
     Utils::dump("添加聊天室消息白名单",$Message);
 }
 add();
@@ -32,7 +32,7 @@ function getList()
     $chatroom = [
 
     ];
-    $Message = $RongSDK->getChatroom()->Whitelist()->Message()->getList($chatroom);
+    $Message = $RongSDK->ChatRoom()->Whitelist()->Message()->getList($chatroom);
     Utils::dump("获取聊天室消息白名单",$Message);
 }
 getList();
@@ -46,7 +46,7 @@ function remove()
     $chatroom = [
         'msgs'=> ["RC:TxtMsg"]//消息类型列表
     ];
-    $Message = $RongSDK->getChatroom()->Whitelist()->Message()->remove($chatroom);
+    $Message = $RongSDK->ChatRoom()->Whitelist()->Message()->remove($chatroom);
     Utils::dump("删除聊天室消息白名单",$Message);
 }
 remove();

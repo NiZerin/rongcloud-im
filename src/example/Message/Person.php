@@ -22,7 +22,7 @@ function send()
         "objectName"=>'RC:TxtMsg',//消息类型 文本
         'content'=>json_encode(['content'=>'你好，主播'])//消息内容
     ];
-    $Chartromm = $RongSDK->getMessage()->Person()->send($message);
+    $Chartromm = $RongSDK->Message()->Person()->send($message);
     Utils::dump("二人消息发送",$Chartromm);
 }
 send();
@@ -48,7 +48,7 @@ function sendTemplate()
             ]
         ])
     ];
-    $Chartromm = $RongSDK->getMessage()->Person()->sendTemplate($message);
+    $Chartromm = $RongSDK->Message()->Person()->sendTemplate($message);
     Utils::dump("向多个用户发送不同内容消息",$Chartromm);
 }
 sendTemplate();
@@ -65,7 +65,7 @@ function recall()
         "uId"=>'5GSB-RPM1-KP8H-9JHF',//消息唯一标识
         'sentTime'=>'1519444243981'//发送时间
     ];
-    $Chartromm = $RongSDK->getMessage()->Person()->recall($message);
+    $Chartromm = $RongSDK->Message()->Person()->recall($message);
     Utils::dump("二人消息撤回",$Chartromm);
 }
 recall();

@@ -2,7 +2,9 @@
 /**
  * 消息模块测试用例
  */
-require "./../RongCloud.php";
+
+
+require "./src/RongCloud.php";
 define("APPKEY", '');
 define('APPSECRET','');
 
@@ -12,7 +14,7 @@ use RongCloud\Lib\Utils;
 $RongSDK = new RongCloud(APPKEY,APPSECRET);
 
 function testMessageChatroom($RongSDK){
-    $Message = $RongSDK->getMessage()->Chatroom();
+    $Message = $RongSDK->Message()->Chatroom();
     $params = [
         'senderId'=> 'ujadk90ha',//发送人 id
         'targetId'=> 'kkj9o01',//聊天室 id
@@ -75,7 +77,7 @@ function testMessageChatroom($RongSDK){
 testMessageChatroom($RongSDK);
 
 function testMessageGroup($RongSDK){
-    $Message = $RongSDK->getMessage()->Group();
+    $Message = $RongSDK->Message()->Group();
     $params = [
         'senderId'=> 'ujadk90ha',//发送人 id
         'targetId'=> 'kkj9o01',//聊天室 id
@@ -163,7 +165,7 @@ testMessageGroup($RongSDK);
 
 
 function testMessageHistory($RongSDK){
-    $Message = $RongSDK->getMessage()->History();
+    $Message = $RongSDK->Message()->History();
     $params = [
         'date'=> '2018030613',//日期
     ];
@@ -182,7 +184,7 @@ function testMessageHistory($RongSDK){
 testMessageHistory($RongSDK);
 
 function testMessagePerson($RongSDK){
-    $Message = $RongSDK->getMessage()->Person();
+    $Message = $RongSDK->Message()->Person();
     $params = [
         'senderId'=> 'ujadk90ha',//发送人 id
         'targetId'=> 'markoiwm',//接收人 id
@@ -226,7 +228,7 @@ function testMessagePerson($RongSDK){
 testMessagePerson($RongSDK);
 
 function testMessageSystem($RongSDK){
-    $Message = $RongSDK->getMessage()->System();
+    $Message = $RongSDK->Message()->System();
     $params = [
         'senderId'=> '__system__',//发送人 id
         'targetId'=> 'markoiwm',//接收放 id

@@ -23,7 +23,7 @@ function add()
         ],
         'minute'=>30//禁言时长
     ];
-    $Gag = $RongSDK->getChatroom()->Gag()->add($chatroom);
+    $Gag = $RongSDK->ChatRoom()->Gag()->add($chatroom);
     Utils::dump("添加聊天室成员禁言",$Gag);
 }
 add();
@@ -40,7 +40,7 @@ function remove()
             ['id'=>'seal9901']//人员 id
         ],
     ];
-    $Gag = $RongSDK->getChatroom()->Gag()->remove($chatroom);
+    $Gag = $RongSDK->ChatRoom()->Gag()->remove($chatroom);
     Utils::dump("解除聊天室成员禁言",$Gag);
 }
 remove();
@@ -54,7 +54,7 @@ function getList()
     $chatroom = [
         "id"=>"chatroom001"//聊天室 id
     ];
-    $Gag = $RongSDK->getChatroom()->Gag()->getList($chatroom);
+    $Gag = $RongSDK->ChatRoom()->Gag()->getList($chatroom);
     Utils::dump("获取聊天室成员禁言列表",$Gag);
 }
 getList();

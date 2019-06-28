@@ -22,7 +22,7 @@ function send()
         "objectName"=>'RC:TxtMsg',//消息类型 文本
         'content'=>['content'=>'php 系统消息']//消息体
     ];
-    $Result = $RongSDK->getMessage()->System()->send($message);
+    $Result = $RongSDK->Message()->System()->send($message);
     Utils::dump("系统消息发送",$Result);
 }
 //send();
@@ -38,7 +38,7 @@ function broadcast()
         "objectName"=>'RC:TxtMsg',//消息类型
         'content'=>['content'=>'php 广播消息']//消息内容
     ];
-    $Result = $RongSDK->getMessage()->System()->broadcast($message);
+    $Result = $RongSDK->Message()->System()->broadcast($message);
     Utils::dump("系统广播消息",$Result);
 }
 broadcast();
@@ -63,7 +63,7 @@ function sendTemplate()
             ]
         ])
     ];
-    $Chartromm = $RongSDK->getMessage()->System()->sendTemplate($message);
+    $Chartromm = $RongSDK->Message()->System()->sendTemplate($message);
     Utils::dump("系统模板消息",$Chartromm);
 }
 sendTemplate();

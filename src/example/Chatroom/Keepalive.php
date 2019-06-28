@@ -19,7 +19,7 @@ function add()
     $chatroom = [
         'id'=> "Txtmsg03"
     ];
-    $Keeplive = $RongSDK->getChatroom()->Keepalive()->add($chatroom);
+    $Keeplive = $RongSDK->ChatRoom()->Keepalive()->add($chatroom);
     Utils::dump("添加保活聊天室",$Keeplive);
 }
 add();
@@ -33,7 +33,7 @@ function remove()
     $chatroom = [
         'id'=> "chrmId001"
     ];
-    $Keeplive = $RongSDK->getChatroom()->Keepalive()->remove($chatroom);
+    $Keeplive = $RongSDK->ChatRoom()->Keepalive()->remove($chatroom);
     Utils::dump("删除保活聊天室",$Keeplive);
 }
 remove();
@@ -47,7 +47,7 @@ function getList()
     $chatroom = [
 
     ];
-    $Keeplive = $RongSDK->getChatroom()->Keepalive()->getList($chatroom);
+    $Keeplive = $RongSDK->ChatRoom()->Keepalive()->getList($chatroom);
     Utils::dump("获取保活聊天室",$Keeplive);
 }
 getList();

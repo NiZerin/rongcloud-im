@@ -22,7 +22,7 @@ function add()
         ],
         'minute'=>30//禁言时长
     ];
-    $Ban = $RongSDK->getChatroom()->Ban()->add($chatroom);
+    $Ban = $RongSDK->ChatRoom()->Ban()->add($chatroom);
     Utils::dump("添加聊天室全局禁言",$Ban);
 }
 add();
@@ -38,7 +38,7 @@ function remove()
             ['id'=>'seal9901']//人员 id
         ],
     ];
-    $Ban = $RongSDK->getChatroom()->Ban()->remove($chatroom);
+    $Ban = $RongSDK->ChatRoom()->Ban()->remove($chatroom);
     Utils::dump("解除聊天室全局禁言",$Ban);
 }
 remove();
@@ -52,7 +52,7 @@ function getList()
     $chatroom = [
 
     ];
-    $Ban = $RongSDK->getChatroom()->Ban()->getList($chatroom);
+    $Ban = $RongSDK->ChatRoom()->Ban()->getList($chatroom);
     Utils::dump("获取聊天室全局禁言列表",$Ban);
 }
 getList();

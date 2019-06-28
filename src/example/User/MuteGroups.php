@@ -22,7 +22,7 @@ function add()
         ],
         'minute'=>3000  //	禁言时长
     ];
-    $result = $RongSDK->getUser()->MuteGroups()->add($group);
+    $result = $RongSDK->User()->MuteGroups()->add($group);
     Utils::dump("添加群组禁言",$result);
 }
 add();
@@ -36,7 +36,7 @@ function getList()
     $group = [
 
     ];
-    $result = $RongSDK->getUser()->MuteGroups()->getList($group);
+    $result = $RongSDK->User()->MuteGroups()->getList($group);
     Utils::dump("查询禁言成员列表",$result);
 }
 getList();
@@ -52,7 +52,7 @@ function remove()
                 ['id'=> 'Vu-oC0_LQ6kgPqltm_zYtI']
             ]
     ];
-    $result = $RongSDK->getUser()->MuteGroups()->remove($group);
+    $result = $RongSDK->User()->MuteGroups()->remove($group);
     Utils::dump("解除禁言",$result);
 }
 remove();
