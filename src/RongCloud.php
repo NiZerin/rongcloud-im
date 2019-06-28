@@ -11,11 +11,7 @@ use RongCloud\lib\Message\Message;
 use RongCloud\lib\Sensitive\Sensitive;
 use RongCloud\lib\User\User;
 
-error_reporting(E_ALL);
-if (!defined('RONGCLOUOD_ROOT')) {
-    define('RONGCLOUOD_ROOT', dirname(__FILE__) . '/');
-    require('Autoloader.php');
-}
+
 
 class RongCloud
 {
