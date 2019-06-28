@@ -2,7 +2,7 @@
 /**
  * 聊天室模块测试用例
  */
-require "./../RongCloud.php";
+require "./src/RongCloud.php";
 define("APPKEY", '');
 define('APPSECRET','');
 
