@@ -4,10 +4,10 @@
  */
 
 
-require "./../../RongCloud.php";
+require "./../../Entrance.php";
 define("APPKEY", '');
 define('APPSECRET','');
-use RongCloud\Rongcloud;
+use RongCloud\Entrance;
 use Rongcloud\Lib\Utils;
 
 /**
@@ -15,7 +15,7 @@ use Rongcloud\Lib\Utils;
  */
 function send()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $message = [
         'senderId'=> 'Vu-oC0_LQ6kgPqltm_zYtI',//发送人 id
         'targetId'=> ['php group1'],//群组 id
@@ -32,7 +32,7 @@ send();
  */
 function sendMention()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $message = [
         'senderId'=> 'ujadk90ha',//发送人 id
         'targetId'=> ['STRe0shISpQlSOBvek1FfU'],//群组 id
@@ -56,7 +56,7 @@ sendMention();
  */
 function recall()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $message = [
         'senderId'=> 'ujadk90ha',//发送人 Id
         'targetId'=> ['STRe0shISpQlSOBvek1FfU'],//群组 id

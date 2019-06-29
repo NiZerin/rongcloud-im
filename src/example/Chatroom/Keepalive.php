@@ -4,10 +4,10 @@
  */
 
 
-require "./../../RongCloud.php";
+require "./../../Entrance.php";
 define("APPKEY", '');
 define('APPSECRET','');
-use RongCloud\Rongcloud;
+use RongCloud\Entrance;
 use Rongcloud\Lib\Utils;
 
 /**
@@ -15,7 +15,7 @@ use Rongcloud\Lib\Utils;
  */
 function add()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $chatroom = [
         'id'=> "Txtmsg03"
     ];
@@ -29,7 +29,7 @@ add();
  */
 function remove()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $chatroom = [
         'id'=> "chrmId001"
     ];
@@ -43,7 +43,7 @@ remove();
  */
 function getList()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $chatroom = [
 
     ];

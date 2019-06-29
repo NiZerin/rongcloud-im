@@ -4,10 +4,10 @@
  */
 
 
-require "./../../RongCloud.php";
+require "./../../Entrance.php";
 define("APPKEY", '');
 define('APPSECRET','');
-use RongCloud\Rongcloud;
+use RongCloud\Entrance;
 use Rongcloud\Lib\Utils;
 
 /**
@@ -15,7 +15,7 @@ use Rongcloud\Lib\Utils;
  */
 function add()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $user = [
         'id'=> 'ujadk90ha1',//封禁用户id 唯一标识，最大长度 30 个字符
         'minute'=> 20 //封禁时长 1 - 1 * 30 * 24 * 60 分钟
@@ -30,7 +30,7 @@ add();
  */
 function remove()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $user = [
         'id'=> 'ujadk90ha1',//解禁用户id 唯一标识，最大长度 30 个字符
     ];
@@ -44,7 +44,7 @@ remove();
  */
 function getList()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $user = [
 
     ];

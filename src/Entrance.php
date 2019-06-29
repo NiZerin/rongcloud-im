@@ -12,8 +12,12 @@ use RongCloud\lib\Sensitive\Sensitive;
 use RongCloud\lib\User\User;
 
 
-
-class RongCloud
+/**
+ * 入口类
+ * Class Entrance
+ * @package RongCloud
+ */
+class Entrance
 {
     /**
      * 应用 appkey

@@ -4,10 +4,10 @@
  */
 
 
-require "./../../RongCloud.php";
+require "./../../Entrance.php";
 define("APPKEY", '');
 define('APPSECRET','');
-use RongCloud\Rongcloud;
+use RongCloud\Entrance;
 use Rongcloud\Lib\Utils;
 
 /**
@@ -15,7 +15,7 @@ use Rongcloud\Lib\Utils;
  */
 function send()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $message = [
         'senderId'=> 'aP9uvganV',//发送人 id
         'targetId'=> ['OIBbeKlkx'],//聊天室 id
@@ -32,7 +32,7 @@ send();
  */
 function broadcast()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $message = [
         'senderId'=> 'aP9uvganV',//发送人 id
         "objectName"=>'RC:TxtMsg',//消息类型 文本

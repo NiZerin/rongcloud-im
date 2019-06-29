@@ -3,14 +3,14 @@
  * 用户模块测试用例
  */
 
-require "./src/RongCloud.php";
+require "./src/Entrance.php";
 define("APPKEY", '');
 define('APPSECRET','');
 
-use RongCloud\RongCloud;
+use RongCloud\Entrance;
 use RongCloud\Lib\Utils;
 
-$RongSDK = new RongCloud(APPKEY,APPSECRET);
+$RongSDK = new Entrance(APPKEY,APPSECRET);
 
 function testUser($RongSDK){
     $portrait = "http://7xogjk.com1.z0.glb.clouddn.com/IuDkFprSQ1493563384017406982";

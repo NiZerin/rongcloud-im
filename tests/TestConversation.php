@@ -2,14 +2,14 @@
 /**
  * 会话模块测试用例
  */
-require "./src/RongCloud.php";
+require "./src/Entrance.php";
 define("APPKEY", '');
 define('APPSECRET','');
 
-use RongCloud\RongCloud;
+use RongCloud\Entrance;
 use RongCloud\Lib\Utils;
 
-$RongSDK = new RongCloud(APPKEY,APPSECRET);
+$RongSDK = new Entrance(APPKEY,APPSECRET);
 
 function testConversation($RongSDK){
     $Conversation = $RongSDK->Conversation();

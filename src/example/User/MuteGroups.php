@@ -4,10 +4,10 @@
  */
 
 
-require "./../../RongCloud.php";
+require "./../../Entrance.php";
 define("APPKEY", '');
 define('APPSECRET','');
-use RongCloud\Rongcloud;
+use RongCloud\Entrance;
 use Rongcloud\Lib\Utils;
 
 /**
@@ -15,7 +15,7 @@ use Rongcloud\Lib\Utils;
  */
 function add()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $group = [
         'members'=>[ //禁言人员列表
             ['id'=> 'Vu-oC0_LQ6kgPqltm_zYtI']
@@ -32,7 +32,7 @@ add();
 function getList()
 {
 
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $group = [
 
     ];
@@ -46,7 +46,7 @@ getList();
 function remove()
 {
 
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $group = [
         'members'=>[ ////解除禁言人员列表
                 ['id'=> 'Vu-oC0_LQ6kgPqltm_zYtI']

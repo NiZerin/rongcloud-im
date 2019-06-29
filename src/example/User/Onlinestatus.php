@@ -4,10 +4,10 @@
  */
 
 
-require "./../../RongCloud.php";
+require "./../../Entrance.php";
 define("APPKEY", '');
 define('APPSECRET','');
-use RongCloud\RongCloud;
+use RongCloud\Entrance;
 use RongCloud\Lib\Utils;
 
 /**
@@ -15,7 +15,7 @@ use RongCloud\Lib\Utils;
  */
 function check()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $user = [
         'id'=> 'ujadk90hadsdfasdf',
     ];

@@ -4,7 +4,7 @@
  */
 namespace RongCloud\Lib;
 
-use RongCloud\RongCloud;
+use RongCloud\Entrance;
 
 class Request
 {
@@ -14,9 +14,9 @@ class Request
     private $serverUrl = 'http://api.cn.ronghub.com/';
     private $smsUrl = 'http://api.sms.ronghub.com/';
     public function __construct(){
-        if(RongCloud::$appkey) $this->appKey = RongCloud::$appkey;
-        if(RongCloud::$appSecret) $this->appSecret = RongCloud::$appSecret;
-        if(RongCloud::$apiUrl) $this->serverUrl = RongCloud::$apiUrl;
+        if(Entrance::$appkey) $this->appKey = Entrance::$appkey;
+        if(Entrance::$appSecret) $this->appSecret = Entrance::$appSecret;
+        if(Entrance::$apiUrl) $this->serverUrl = Entrance::$apiUrl;
     }
     /**
      * 创建http header参数

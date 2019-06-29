@@ -4,10 +4,10 @@
  */
 
 
-require "./../../RongCloud.php";
+require "./../../Entrance.php";
 define("APPKEY", '');
 define('APPSECRET','');
-use RongCloud\Rongcloud;
+use RongCloud\Entrance;
 use Rongcloud\Lib\Utils;
 
 /**
@@ -15,7 +15,7 @@ use Rongcloud\Lib\Utils;
  */
 function sync()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $group = [
         'id'=> 'uPj70HUrRSUk-ixtt7iIGc',//用户id
         'groups'=>[['id'=> 'php group1', 'name'=> 'watergroup']]//用户群组信息
@@ -30,7 +30,7 @@ sync();
  */
 function create()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $group = [
         'id'=> 'php group1',//群组 id
         'name'=> 'watergroup',//群组名称
@@ -48,7 +48,7 @@ create();
  */
 function get()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $group = [
         'id'=> 'php group1',//群组 id
     ];
@@ -62,7 +62,7 @@ get();
  */
 function joins()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $group = [
         'id'=> 'php group1',//群组 id
         'name'=>"watergroup",//群组名称
@@ -78,7 +78,7 @@ joins();
  */
 function quit()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $group = [
         'id'=> 'php group1',//群组 id
         'member'=>['id'=> 'uPj70HUrRSUk-ixtt7iIGc']//退出人员信息
@@ -93,7 +93,7 @@ quit();
  */
 function dismiss()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $group = [
         'id'=> 'php group1',//群组 id
         'member'=>['id'=> 'group999']//管理员信息
@@ -108,7 +108,7 @@ dismiss();
  */
 function update()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $group = [
         'id'=> 'php group1',//群组 id
         'name'=>"watergroup"//群名称

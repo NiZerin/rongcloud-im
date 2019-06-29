@@ -4,10 +4,10 @@
  */
 
 
-require "./../../RongCloud.php";
+require "./../../Entrance.php";
 define("APPKEY", '');
 define('APPSECRET','');
-use RongCloud\Rongcloud;
+use RongCloud\Entrance;
 use Rongcloud\Lib\Utils;
 
 /**
@@ -16,7 +16,7 @@ use Rongcloud\Lib\Utils;
 function create()
 {
 
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $chatroom = [
         ['id'=> 'php chatroom1',//聊天室 id
         'name'=> 'php chatroom1']//聊天室 name
@@ -32,7 +32,7 @@ create();
 function destory()
 {
 
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $chatroom = ['id'=> 'php chatroom'];//聊天室 id
     $result = $RongSDK->ChatRoom()->destory($chatroom);
     Utils::dump("销毁聊天室",$result);
@@ -44,7 +44,7 @@ destory();
  */
 function get()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $chatroom = [
                 'id'=> 'OIBbeKlkx',//聊天室 id
                 'count'=>10,
@@ -62,7 +62,7 @@ die;
 function isExist()
 {
 
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $chatroom = [
         'id'=> 'php chatroom',//聊天室 id
         'members'=>[

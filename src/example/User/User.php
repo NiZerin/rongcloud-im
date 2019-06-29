@@ -4,10 +4,10 @@
  */
 
 
-require "./../../RongCloud.php";
+require "./../../Entrance.php";
 define("APPKEY", '');
 define('APPSECRET','');
-use RongCloud\RongCloud;
+use RongCloud\Entrance;
 use RongCloud\Lib\Utils;
 
 /**
@@ -15,7 +15,7 @@ use RongCloud\Lib\Utils;
  */
 function register()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $user = [
         'id'=> 'ujadk90had',
         'name'=> 'Maritn',//用户名称
@@ -31,7 +31,7 @@ register();
  */
 function update()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $user = [
         'id'=> 'ujadk90ha',//用户id
         'name'=> 'Maritn',//用户名称

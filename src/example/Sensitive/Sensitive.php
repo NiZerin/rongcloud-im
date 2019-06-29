@@ -4,10 +4,10 @@
  */
 
 
-require "./../../RongCloud.php";
+require "./../../Entrance.php";
 define("APPKEY", '');
 define('APPSECRET','');
-use RongCloud\Rongcloud;
+use RongCloud\Entrance;
 use Rongcloud\Lib\Utils;
 
 /**
@@ -15,7 +15,7 @@ use Rongcloud\Lib\Utils;
  */
 function add()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $sensitive = [
         'replace'=> '***',//敏感词替换，最长不超过 32 个字符， 敏感词屏蔽可以为空
         'keyword'=>"abc",//敏感词
@@ -32,7 +32,7 @@ add();
 function remove()
 {
 
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $sensitive = [
         'keywords'=>["cccccdddd"]//删除敏感词
     ];
@@ -47,7 +47,7 @@ remove();
 function getList()
 {
 
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $sensitive = [
         'type'=> '',//敏感词类型，0: 敏感词替换， 1: 敏感词屏蔽， 为空获取全部
     ];

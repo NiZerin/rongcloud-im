@@ -4,10 +4,10 @@
  */
 
 
-require "./../../RongCloud.php";
+require "./../../Entrance.php";
 define("APPKEY", '');
 define('APPSECRET','');
-use RongCloud\Rongcloud;
+use RongCloud\Entrance;
 use Rongcloud\Lib\Utils;
 
 /**
@@ -15,7 +15,7 @@ use Rongcloud\Lib\Utils;
  */
 function add()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $user = [
         'id'=> 'ujadk90ha',//用户 id
         'blacklist'=> ['kkj9o01'] //需要添加黑名单的人员列表
@@ -30,7 +30,7 @@ add();
  */
 function remove()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $user = [
         'id'=> 'ujadk90ha',//用户 id
         'blacklist'=> ['kkj9o02'] //需要移除黑名单的人员列表
@@ -45,7 +45,7 @@ remove();
  */
 function getList()
 {
-    $RongSDK = new RongCloud(APPKEY,APPSECRET);
+    $RongSDK = new Entrance(APPKEY,APPSECRET);
     $user = [
         'id'=> 'ujadk90ha',//用户 id
     ];
