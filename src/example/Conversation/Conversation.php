@@ -3,8 +3,6 @@
  * 会话实例
  */
 
-
-require "./../../Entrance.php";
 define("APPKEY", '');
 define('APPSECRET','');
 use RongCloud\Entrance;

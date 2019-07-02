@@ -3,7 +3,6 @@
  *聊天室消息白名单实例
  */
 
-require "./../../../Entrance.php";
 define("APPKEY", '');
 define('APPSECRET','');
 use RongCloud\Entrance;

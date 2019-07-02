@@ -4,7 +4,6 @@
  */
 
 
-require "./../../Entrance.php";
 define("APPKEY", '');
 define('APPSECRET','');
 use RongCloud\Entrance;
