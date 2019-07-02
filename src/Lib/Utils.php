@@ -263,12 +263,13 @@ class Utils
         $files = file_get_contents(RONGCLOUOD_ROOT.$path);
         return json_decode($files, true);
     }
+
     /**
      * 变量友好化打印输出
-     * @param variable  $param  可变参数
+     * @param variable
+     * $param  可变参数
      * @example dump($a,$b,$c,$e,[.1]) 支持多变量，使用英文逗号符号分隔，默认方式 print_r，查看数据类型传入 .1
      * @version php>=5.6
-     * @return void
      */
     public static function dump(){
 		$param = func_get_args();

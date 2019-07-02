@@ -18,10 +18,10 @@ class Request
         if(Entrance::$appSecret) $this->appSecret = Entrance::$appSecret;
         if(Entrance::$apiUrl) $this->serverUrl = Entrance::$apiUrl;
     }
+
     /**
      * 创建http header参数
-     * @param array $data
-     * @return bool
+     * @return array
      */
     private function createHttpHeader() {
         $nonce = mt_rand();
