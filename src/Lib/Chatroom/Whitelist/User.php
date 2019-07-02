@@ -4,8 +4,7 @@
  */
 namespace RongCloud\Lib\Chatroom\Whitelist;
 
-use RongCloud\Lib\Request;
-use Rongcloud\Lib\Utils;
+use RongCloud\Lib\{Request,Utils};
 
 class User {
 

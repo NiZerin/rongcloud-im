@@ -4,8 +4,8 @@
  */
 namespace RongCloud\Lib\Message\History;
 
-use RongCloud\Lib\Request;
-use Rongcloud\Lib\Utils;
+use RongCloud\Lib\{Request,Utils};
+
 
 class History {
     private $jsonPath = 'Lib/Message/History/';

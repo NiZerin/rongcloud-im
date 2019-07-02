@@ -4,9 +4,8 @@
  */
 namespace RongCloud\Lib\Message\Person;
 
-use RongCloud\Lib\ConversationType;
-use RongCloud\Lib\Request;
-use Rongcloud\Lib\Utils;
+use RongCloud\Lib\{Request,Utils,ConversationType};
+
 
 class Person {
 

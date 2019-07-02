@@ -7,10 +7,8 @@
  */
 namespace RongCloud\Lib\Conversation;
 
-use MongoDB\BSON\ObjectId;
-use RongCloud\Lib\ConversationType;
-use RongCloud\Lib\Request;
-use Rongcloud\Lib\Utils;
+use RongCloud\Lib\{Request,Utils,ConversationType};
+
 class Conversation
 {
     /**

@@ -4,8 +4,7 @@
  */
 namespace RongCloud\Lib\Chatroom\Distribute;
 
-use RongCloud\Lib\Request;
-use Rongcloud\Lib\Utils;
+use RongCloud\Lib\{Request,Utils};
 
 class Distribute {
 

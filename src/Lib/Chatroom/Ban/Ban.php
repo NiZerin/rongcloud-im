@@ -4,8 +4,8 @@
  */
 namespace RongCloud\Lib\Chatroom\Ban;
 
-use RongCloud\Lib\Request;
-use Rongcloud\Lib\Utils;
+use RongCloud\Lib\{Request,Utils};
+
 
 class Ban {
 

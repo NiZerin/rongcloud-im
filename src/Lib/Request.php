@@ -140,7 +140,8 @@ class Request
 
     /**
      * curl 请求错误信息
-     * @param int $error
+     * @param  int  $error
+     * @return mixed|string
      */
     public function getCurlError($error=1){
         $errorCodes=array(
@@ -215,7 +216,6 @@ class Request
             81 => 'CURLE_AGAIN',
             82 => 'CURLE_SSL_CRL_BADFILE',
             83 => 'CURLE_SSL_ISSUER_ERROR',
-            84 => 'CURLE_FTP_PRET_FAILED',
             84 => 'CURLE_FTP_PRET_FAILED',
             85 => 'CURLE_RTSP_CSEQ_ERROR',
             86 => 'CURLE_RTSP_SESSION_ERROR',

@@ -4,12 +4,8 @@
  */
 namespace RongCloud\Lib\Message;
 
-use RongCloud\Lib\Message\Chatroom\Chatroom;
-use RongCloud\Lib\Message\Discussion\Discussion;
-use RongCloud\Lib\Message\Group\Group;
-use RongCloud\Lib\Message\History\History;
-use RongCloud\Lib\Message\Person\Person;
-use RongCloud\Lib\Message\System\System;
+use RongCloud\Lib\Message\{Chatroom\Chatroom,Discussion\Discussion,Group\Group,History\History,Person\Person,System\System};
+
 
 class Message
 {

@@ -7,8 +7,7 @@
  */
 namespace RongCloud\Lib\User\Blacklist;
 
-use RongCloud\Lib\Request;
-use Rongcloud\Lib\Utils;
+use RongCloud\Lib\{Request,Utils};
 
 class Blacklist {
 

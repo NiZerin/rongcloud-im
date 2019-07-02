@@ -4,16 +4,15 @@
  */
 namespace RongCloud\Lib\Chatroom;
 
-use RongCloud\Lib\Request;
-use Rongcloud\Lib\Utils;
+use RongCloud\Lib\{Request,Utils};
 use RongCloud\Lib\Chatroom\Ban\Ban;
 use RongCloud\Lib\Chatroom\Block\Block;
 use RongCloud\Lib\Chatroom\Demotion\Demotion;
 use RongCloud\Lib\Chatroom\Distribute\Distribute;
 use RongCloud\Lib\Chatroom\Gag\Gag;
 use RongCloud\Lib\Chatroom\Keepalive\Keepalive;
-use RongCloud\Lib\Chatroom\Whitelist\Whitelist;
-use RongCloud\Lib\Chatroom\Whitelist\Message;
+use RongCloud\Lib\Chatroom\Whitelist\{Whitelist,Message};
+
 
 class Chatroom
 {

@@ -5,8 +5,8 @@
  */
 namespace RongCloud\Lib\Group\Gag;
 
-use RongCloud\Lib\Request;
-use Rongcloud\Lib\Utils;
+use RongCloud\Lib\{Request,Utils};
+
 class Gag
 {
     /**

@@ -5,9 +5,9 @@
  */
 namespace RongCloud\Lib\Group;
 
-use RongCloud\Lib\Group\Gag\Gag;
-use RongCloud\Lib\Request;
-use Rongcloud\Lib\Utils;
+use RongCloud\Lib\{Group\Gag\Gag,Request,Utils};
+
+
 class Group
 {
     /**

@@ -4,8 +4,7 @@
  */
 namespace RongCloud\Lib\Message\Chatroom;
 
-use RongCloud\Lib\Request;
-use Rongcloud\Lib\Utils;
+use RongCloud\Lib\{Request,Utils};
 
 class Chatroom {
     private $jsonPath = 'Lib/Message/Chatroom/';

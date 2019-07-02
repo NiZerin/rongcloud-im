@@ -4,9 +4,7 @@
  */
 namespace RongCloud\Lib\User\Onlinestatus;
 
-use RongCloud\Lib\Request;
-use RongCloud\Lib\User\User;
-use Rongcloud\Lib\Utils;
+use RongCloud\Lib\{Request,Utils};
 
 class Onlinestatus {
 
