@@ -4,7 +4,7 @@
  */
 
 
-require "./src/Entrance.php";
+
 define("APPKEY", '');
 define('APPSECRET','');
 

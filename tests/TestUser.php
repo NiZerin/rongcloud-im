@@ -3,7 +3,7 @@
  * 用户模块测试用例
  */
 
-require "./src/Entrance.php";
+
 define("APPKEY", '');
 define('APPSECRET','');
 
