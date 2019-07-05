@@ -1,6 +1,8 @@
 # Rong Cloud Server SDK in PHP
 ![https://www.rongcloud.cn/docs/assets/img/index/logo.png](https://www.rongcloud.cn/docs/assets/img/index/logo.png)
 
+![](https://img.shields.io/packagist/dt/nizerin/rongcloud-im.svg) ![](https://img.shields.io/packagist/v/nizerin/rongcloud-im.svg) ![Packagist](https://img.shields.io/packagist/l/nizerin/rongcloud-im.svg)
+
 
 # Composer 安装
 ```
