@@ -2,28 +2,38 @@
 /**
  * 请求发送
  */
+
 namespace RongCloud\Lib;
 
 use RongCloud\Entrance;
 
 class Request
 {
-    private $appKey="";
-    private $appSecret="";
+    private $appKey = "";
+    private $appSecret = "";
 //    private $serverUrl = 'https://api-rce-rcxtest.rongcloud.net/';
     private $serverUrl = 'http://api.cn.ronghub.com/';
     private $smsUrl = 'http://api.sms.ronghub.com/';
-    public function __construct(){
-        if(Entrance::$appkey) $this->appKey = Entrance::$appkey;
-        if(Entrance::$appSecret) $this->appSecret = Entrance::$appSecret;
-        if(Entrance::$apiUrl) $this->serverUrl = Entrance::$apiUrl;
+
+    public function __construct()
+    {
+        if (Entrance::$appkey) {
+            $this->appKey = Entrance::$appkey;
+        }
+        if (Entrance::$appSecret) {
+            $this->appSecret = Entrance::$appSecret;
+        }
+        if (Entrance::$apiUrl) {
+            $this->serverUrl = Entrance::$apiUrl;
+        }
     }
 
     /**
      * 创建http header参数
      * @return array
      */
-    private function createHttpHeader() {
+    private function createHttpHeader()
+    {
         $nonce = mt_rand();
         $timeStamp = time();
         $sign = sha1($this->appSecret.$nonce.$timeStamp);
@@ -40,13 +50,14 @@ class Request
      *
      * @param $action 接口方法
      * @param $params 请求参数
-     * @param string $contentType 接口返回数据类型 默认 json
-     * @param string $module 接口请求模块 默认 im
-     * @param string $httpMethod 接口请求方式 默认 POST
+     * @param  string  $contentType  接口返回数据类型 默认 json
+     * @param  string  $module  接口请求模块 默认 im
+     * @param  string  $httpMethod  接口请求方式 默认 POST
      * @return int|mixed
      */
-    public function Request($action, $params,$contentType='urlencoded',$module = 'im',$httpMethod='POST') {
-        switch ($module){
+    public function Request($action, $params, $contentType = 'urlencoded', $module = 'im', $httpMethod = 'POST')
+    {
+        switch ($module) {
             case 'im':
                 $action = $this->serverUrl.$action;
                 break;
@@ -59,27 +70,27 @@ class Request
 
         $httpHeader = $this->createHttpHeader();
         $ch = curl_init();
-        if($contentType == "urlencoded" || $contentType == "json"){
-            $action .=".json";
-        }else{
-            $action .=".xml";
+        if ($contentType == "urlencoded" || $contentType == "json") {
+            $action .= ".json";
+        } else {
+            $action .= ".xml";
         }
-        if ($httpMethod=='POST' && $contentType=='urlencoded') {
+        if ($httpMethod == 'POST' && $contentType == 'urlencoded') {
             $httpHeader[] = 'Content-Type:application/x-www-form-urlencoded';
             curl_setopt($ch, CURLOPT_POSTFIELDS, $this->build_query($params));
         }
-        if ($httpMethod=='POST' && $contentType=='json') {
+        if ($httpMethod == 'POST' && $contentType == 'json') {
             $httpHeader[] = 'Content-Type:application/json';
-            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($params) );
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($params));
         }
-        if ($httpMethod=='GET' && $contentType=='urlencoded') {
-            $action .= strpos($action, '?') === false?'?':'&';
+        if ($httpMethod == 'GET' && $contentType == 'urlencoded') {
+            $action .= strpos($action, '?') === false ? '?' : '&';
             $action .= $this->build_query($params);
         }
         curl_setopt($ch, CURLOPT_URL, $action);
-        curl_setopt($ch, CURLOPT_POST, $httpMethod=='POST');
+        curl_setopt($ch, CURLOPT_POST, $httpMethod == 'POST');
         curl_setopt($ch, CURLOPT_HTTPHEADER, $httpHeader);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,false); //处理http证书问题
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //处理http证书问题
         curl_setopt($ch, CURLOPT_HEADER, false);
         curl_setopt($ch, CURLOPT_TIMEOUT, 30);
         curl_setopt($ch, CURLOPT_USERAGENT, "rc-php-sdk/3.0.0");
@@ -87,12 +98,12 @@ class Request
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $ret = curl_exec($ch);
         if (false === $ret) {
-            $ret =  curl_errno($ch);
+            $ret = curl_errno($ch);
             $ret = $this->getCurlError($ret);
         }
         curl_close($ch);
-        $result = json_decode($ret,true);
-        if(isset($result['code']) && $result['code'] == 1000){
+        $result = json_decode($ret, true);
+        if (isset($result['code']) && $result['code'] == 1000) {
 
         }
 
@@ -103,12 +114,13 @@ class Request
      * 生成参数体
      *
      * @param $formData
-     * @param string $numericPrefix
-     * @param string $argSeparator
-     * @param string $prefixKey
+     * @param  string  $numericPrefix
+     * @param  string  $argSeparator
+     * @param  string  $prefixKey
      * @return bool|string
      */
-    private function build_query($formData, $numericPrefix = '', $argSeparator = '&', $prefixKey = '') {
+    private function build_query($formData, $numericPrefix = '', $argSeparator = '&', $prefixKey = '')
+    {
         $str = '';
         foreach ($formData as $key => $val) {
             if (!is_array($val)) {
@@ -117,9 +129,9 @@ class Request
                     if (is_int($key)) {
                         $str .= $numericPrefix;
                     }
-                    $str .= urlencode($key) . '=' . urlencode($val);
+                    $str .= urlencode($key).'='.urlencode($val);
                 } else {
-                    $str .= urlencode($prefixKey) . '=' . urlencode($val);
+                    $str .= urlencode($prefixKey).'='.urlencode($val);
                 }
             } else {
                 if ($prefixKey == '') {
@@ -128,9 +140,9 @@ class Request
                 if (isset($val[0]) && is_array($val[0])) {
                     $arr = array();
                     $arr[$key] = $val[0];
-                    $str .= $argSeparator . http_build_query($arr);
+                    $str .= $argSeparator.http_build_query($arr);
                 } else {
-                    $str .= $argSeparator . $this->build_query($val, $numericPrefix, $argSeparator, $prefixKey);
+                    $str .= $argSeparator.$this->build_query($val, $numericPrefix, $argSeparator, $prefixKey);
                 }
                 $prefixKey = '';
             }
@@ -143,8 +155,9 @@ class Request
      * @param  int  $error
      * @return mixed|string
      */
-    public function getCurlError($error=1){
-        $errorCodes=array(
+    public function getCurlError($error = 1)
+    {
+        $errorCodes = array(
             1 => 'CURLE_UNSUPPORTED_PROTOCOL',
             2 => 'CURLE_FAILED_INIT',
             3 => 'CURLE_URL_MALFORMAT',
@@ -156,7 +169,7 @@ class Request
             9 => 'CURLE_REMOTE_ACCESS_DENIED',
             11 => 'CURLE_FTP_WEIRD_PASS_REPLY',
             13 => 'CURLE_FTP_WEIRD_PASV_REPLY',
-            14 =>'CURLE_FTP_WEIRD_227_FORMAT',
+            14 => 'CURLE_FTP_WEIRD_227_FORMAT',
             15 => 'CURLE_FTP_CANT_GET_HOST',
             17 => 'CURLE_FTP_COULDNT_SET_TYPE',
             18 => 'CURLE_PARTIAL_FILE',
@@ -220,10 +233,11 @@ class Request
             85 => 'CURLE_RTSP_CSEQ_ERROR',
             86 => 'CURLE_RTSP_SESSION_ERROR',
             87 => 'CURLE_FTP_BAD_FILE_LIST',
-            88 => 'CURLE_CHUNK_FAILED');
-        if(isset($errorCodes[$error])){
+            88 => 'CURLE_CHUNK_FAILED'
+        );
+        if (isset($errorCodes[$error])) {
             return $errorCodes[$error];
-        }else{
+        } else {
             return "CURLE_UNKNOW_ERROR";
         }
     }

@@ -2,6 +2,7 @@
 /**
  * 融云 server sdk
  */
+
 namespace RongCloud;
 
 use RongCloud\lib\Chatroom\Chatroom;
@@ -88,14 +89,16 @@ class Entrance
      * @param  string  $appSecret  实体 appSecret 应用 秘钥
      * @param  string  $apiUrl
      */
-    public function __construct($appKey="",$appSecret="",$apiUrl="")
+    public function __construct($appKey = "", $appSecret = "", $apiUrl = "")
     {
         //设置 key 和秘钥
-        if($appKey){
+        if ($appKey) {
             self::$appkey = $appKey;
             self::$appSecret = $appSecret;
         }
-        if($apiUrl) self::$apiUrl = $apiUrl;
+        if ($apiUrl) {
+            self::$apiUrl = $apiUrl;
+        }
         //创建 User
         $this->_user = new User();
 
@@ -106,13 +109,13 @@ class Entrance
         $this->_chatroom = new Chatroom();
 
         //创建 Conversation
-        $this->_conversation= new Conversation();
+        $this->_conversation = new Conversation();
 
         //创建 Message
         $this->_message = new Message();
 
         //创建 Sensitive
-        $this->_sensitive= new Sensitive();
+        $this->_sensitive = new Sensitive();
     }
 
     /**
@@ -120,7 +123,8 @@ class Entrance
      *
      * @return User
      */
-    public function User(){
+    public function User()
+    {
         return $this->_user;
     }
 
@@ -129,7 +133,8 @@ class Entrance
      *
      * @return Message
      */
-    public function Message(){
+    public function Message()
+    {
         return $this->_message;
     }
 
@@ -138,7 +143,8 @@ class Entrance
      *
      * @return Group
      */
-    public function Group(){
+    public function Group()
+    {
         return $this->_group;
     }
 
@@ -147,7 +153,8 @@ class Entrance
      *
      * @return Chatroom
      */
-    public function ChatRoom(){
+    public function ChatRoom()
+    {
         return $this->_chatroom;
     }
 
@@ -155,8 +162,9 @@ class Entrance
      * 获取会话对象
      *
      * @return Conversation
-    */
-    public function Conversation(){
+     */
+    public function Conversation()
+    {
         return $this->_conversation;
     }
 
@@ -165,7 +173,8 @@ class Entrance
      *
      * @return Sensitive
      */
-    public function Sensitive(){
+    public function Sensitive()
+    {
         return $this->_sensitive;
     }
 }
